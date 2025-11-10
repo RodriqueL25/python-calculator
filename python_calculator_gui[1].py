@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import ttk, messagebox
 import math
 
 # -----------------------------
@@ -50,11 +50,13 @@ def clear_history():
 def memory_add(value):
     global memory
     memory += value
+    mem_label.config(text=f"M = {memory}")
     messagebox.showinfo("Memory", f"Added {value} to memory (M = {memory})")
 
 def memory_subtract(value):
     global memory
     memory -= value
+    mem_label.config(text=f"M = {memory}")
     messagebox.showinfo("Memory", f"Subtracted {value} from memory (M = {memory})")
 
 def memory_recall():
@@ -66,6 +68,7 @@ def memory_recall():
 def memory_clear():
     global memory
     memory = 0.0
+    mem_label.config(text=f"M = {memory}")
     messagebox.showinfo("Memory", "Memory cleared (M = 0)")
 
 # -----------------------------

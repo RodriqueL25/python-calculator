@@ -70,7 +70,14 @@ def memory_clear():
     memory = 0.0
     mem_label.config(text=f"M = {memory}")
     messagebox.showinfo("Memory", "Memory cleared (M = 0)")
-
+    # 
+    # Safe ENtry Helper
+    # 
+def safe_entry(entry):
+    try:
+        return float(entry.get())
+    except (ValueError, TypeError):
+        return 0.0
 # -----------------------------
 # Calculator Logic
 # -----------------------------
